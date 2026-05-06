@@ -1,0 +1,13 @@
+{"id": 1, "answer": "SELECT AVG(explainability_score) FROM creative_ai WHERE region IN ('Europe', 'North America');"}
+{"id": 2, "answer": "DELETE FROM rural_infrastructure WHERE country = 'Indonesia' AND completion_date < '2010-01-01';"}
+{"id": 3, "answer": "SELECT launch_provider, COUNT(*) AS accident_count FROM Accidents WHERE launch_provider IN ('SpaceX', 'Blue Origin') GROUP BY launch_provider;"}
+{"id": 4, "answer": "SELECT MAX(quantity) FROM sales;"}
+{"id": 5, "answer": "SELECT SUM(budget) FROM Movies_Release_Year WHERE release_year < 2010;"}
+{"id": 6, "answer": "INSERT INTO attorneys (attorney_name, attorney_email, attorney_phone) VALUES ('Oliver Martinez', 'oliver.martinez@lawfirm.com', '555-555-5678');"}
+{"id": 7, "answer": "SELECT plant_name, AVG(co2_emission_per_ton_produced) AS avg_co2_emission_per_ton FROM co2_emissions GROUP BY plant_name ORDER BY avg_co2_emission_per_ton DESC LIMIT 2;"}
+{"id": 8, "answer": "SELECT SUM(total_cost) FROM climate_communication WHERE location = 'Antarctica' AND YEAR(end_date) > 2010;"}
+{"id": 9, "answer": "SELECT name, conservation_status FROM marine_species;"}
+{"id": 10, "answer": "SELECT AVG(publications) FROM researchers WHERE organization = 'National Geographic';"}
+{"id": 11, "answer": "SELECT COUNT(*) FROM dapp_ranking WHERE dapp_region = 'Asia-Pacific';"}
+{"id": 12, "answer": "SELECT * FROM forests WHERE hectares > 1000000 AND country IN ('Canada', 'USA');"}
+{"id": 13, "answer": "SELECT MAX(response_time) FROM emergency_calls WHERE city = 'Los Angeles';"}

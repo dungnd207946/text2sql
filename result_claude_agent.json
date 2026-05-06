@@ -1,0 +1,499 @@
+{"id":1,"answer":"SELECT AVG(explainability_score) FROM creative_ai WHERE region IN ('Europe', 'North America');"}
+{"id":2,"answer":"DELETE FROM rural_infrastructure WHERE country = 'Indonesia' AND completion_date < '2010-01-01';"}
+{"id":3,"answer":"SELECT launch_provider, COUNT(*) AS accident_count FROM Accidents WHERE launch_provider IN ('SpaceX', 'Blue Origin') GROUP BY launch_provider;"}
+{"id":4,"answer":"SELECT MAX(quantity) FROM sales;"}
+{"id":5,"answer":"SELECT SUM(budget) FROM Movies_Release_Year WHERE release_year < 2010;"}
+{"id":6,"answer":"INSERT INTO attorneys (attorney_name, attorney_email, attorney_phone) VALUES ('Oliver Martinez', 'oliver.martinez@lawfirm.com', '555-555-5678');"}
+{"id":7,"answer":"SELECT plant_name, co2_emission_per_ton_produced FROM co2_emissions ORDER BY co2_emission_per_ton_produced DESC LIMIT 2;"}
+{"id":8,"answer":"SELECT SUM(total_cost) FROM climate_communication WHERE location = 'Antarctica' AND end_date > '2010-12-31';"}
+{"id":9,"answer":"SELECT name, conservation_status FROM marine_species;"}
+{"id":10,"answer":"SELECT AVG(publications) FROM researchers WHERE organization = 'National Geographic';"}
+{"id":11,"answer":"SELECT SUM(dapp_downloads) FROM dapp_ranking WHERE dapp_region = 'Asia-Pacific';"}
+{"id":12,"answer":"SELECT name, hectares, country FROM forests WHERE country IN ('Canada', 'USA') AND hectares > 1000000;"}
+{"id":13,"answer":"SELECT MAX(response_time) FROM emergency_calls WHERE city = 'Los Angeles';"}
+{"id":14,"answer":"SELECT district_id, COUNT(*) AS total_events FROM patrols WHERE date BETWEEN '2021-01-01' AND '2021-01-31' GROUP BY district_id;"}
+{"id":15,"answer":"SELECT AVG(value) FROM contracts WHERE category = 'Cybersecurity';"}
+{"id":16,"answer":"DELETE FROM arms_imports WHERE year < 2000;"}
+{"id":17,"answer":"SELECT AVG(military_personnel) FROM Peacekeeping_Operations;"}
+{"id":18,"answer":"SELECT client_id, MAX(investment) OVER (PARTITION BY client_id) AS max_daily_investment FROM daily_investments;"}
+{"id":19,"answer":"SELECT p.PortName, SUM(c.Weight) AS total_weight FROM PORTS p JOIN CARGO_HANDLING c ON p.ID = c.PortID WHERE c.CargoType = 'Fruit' GROUP BY p.PortName;"}
+{"id":20,"answer":"SELECT container_type, MIN(fuel_consumption) AS min_fuel FROM container_ships WHERE year = 2016 GROUP BY container_type;"}
+{"id":21,"answer":"SELECT county, state, MAX(prevalence) AS max_prevalence FROM asthma WHERE age < 18 GROUP BY county, state ORDER BY max_prevalence DESC;"}
+{"id":22,"answer":"SELECT region, SUM(amount) AS total_investment FROM investments WHERE sector = 'Healthcare' GROUP BY region;"}
+{"id":23,"answer":"SELECT operation_name, primary_objective, personnel_count FROM intelligence_operations WHERE operation_date >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR);"}
+{"id":24,"answer":"SELECT COUNT(*) FROM Donors WHERE region = 'South West';"}
+{"id":25,"answer":"SELECT p.ProgramName, SUM(d.DonationAmount) AS total_donations FROM Programs p JOIN DonorsPrograms dp ON p.ProgramID = dp.ProgramID JOIN Donations d ON dp.DonorID = d.DonorID GROUP BY p.ProgramName;"}
+{"id":26,"answer":"SELECT EXTRACT(QUARTER FROM DonationDate) AS quarter, AVG(DonationAmount) AS avg_donation FROM Donations WHERE EXTRACT(YEAR FROM DonationDate) = 2022 GROUP BY EXTRACT(QUARTER FROM DonationDate);"}
+{"id":27,"answer":"INSERT INTO students (student_id, district_id, mental_health_score) VALUES (1, 1, 85); UPDATE school_districts SET average_mental_health_score = (SELECT AVG(mental_health_score) FROM students WHERE district_id = 1) WHERE district_id = 1;"}
+{"id":28,"answer":"SELECT CourseID, Name FROM Courses WHERE OpenPedagogy = FALSE AND CourseID NOT IN (SELECT DISTINCT course_id FROM Students WHERE GradeLevel = 12);"}
+{"id":29,"answer":"SELECT Department, AVG(Salary) AS avg_salary FROM Employees WHERE YEAR(HireDate) = 2022 GROUP BY Department;"}
+{"id":30,"answer":"SELECT COUNT(*) FROM wind_farms WHERE country = 'Canada' AND installation_year BETWEEN 2015 AND 2018;"}
+{"id":31,"answer":"SELECT * FROM renewable_project WHERE country = 'India' AND budget BETWEEN 50 AND 200;"}
+{"id":32,"answer":"SELECT AVG(price) FROM carbon_prices WHERE market = 'EU ETS' AND date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH);"}
+{"id":33,"answer":"SELECT AVG(energy_rating) FROM energy_efficiency WHERE building_type = 'Commercial' AND location = 'Texas';"}
+{"id":34,"answer":"DELETE FROM oil_rig WHERE company = 'XYZ Inc.';"}
+{"id":35,"answer":"SELECT player, AVG(running_speed) AS avg_speed FROM world_cup GROUP BY player;"}
+{"id":36,"answer":"SELECT MAX(ss.assists) FROM season_stats ss JOIN players p ON ss.player_id = p.player_id WHERE p.country IN ('France', 'Germany', 'Spain', 'Italy', 'England', 'Portugal', 'Netherlands', 'Belgium', 'Sweden', 'Denmark', 'Norway', 'Switzerland', 'Austria', 'Croatia', 'Serbia', 'Poland', 'Czech Republic', 'Hungary', 'Greece', 'Romania', 'Ukraine', 'Russia', 'Turkey');"}
+{"id":37,"answer":"SELECT SUM(points) FROM players WHERE country = 'Brazil';"}
+{"id":38,"answer":"SELECT organization_id, COUNT(*) AS num_supplies, SUM(supply_cost) AS total_cost FROM medical_supplies WHERE distribution_date >= DATE_SUB(CURDATE(), INTERVAL 3 YEAR) GROUP BY organization_id;"}
+{"id":39,"answer":"SELECT COUNT(*) AS total_ngos, SUM(project_count) AS total_projects FROM ngos WHERE country = 'Yemen';"}
+{"id":40,"answer":"SELECT brand_id, COUNT(*) AS fair_trade_count FROM certifications WHERE certification_name = 'Fair trade' GROUP BY brand_id ORDER BY fair_trade_count DESC;"}
+{"id":41,"answer":"SELECT SUM(revenue) FROM Sales WHERE material IN ('Organic Cotton', 'Hemp', 'Recycled Polyester', 'Tencel', 'Bamboo');"}
+{"id":42,"answer":"SELECT name, total_transactions FROM shariah_compliant_institutions;"}
+{"id":43,"answer":"SELECT COUNT(*) FROM genetic_research WHERE location = 'United Kingdom' AND YEAR(start_date) = 2019;"}
+{"id":44,"answer":"SELECT COUNT(*) FROM faculty WHERE department = 'Physics' AND gender = 'Female' AND id NOT IN (SELECT faculty_id FROM research_grants);"}
+{"id":45,"answer":"SELECT h.HotelName, SUM(b.Revenue) / SUM(b.Guests) AS avg_revenue_per_guest FROM Hotels h JOIN Bookings b ON h.HotelID = b.HotelID GROUP BY h.HotelName;"}
+{"id":46,"answer":"SELECT EXTRACT(MONTH FROM date) AS month, species, MAX(temperature) AS max_temp FROM arctic_weather WHERE EXTRACT(YEAR FROM date) = 2020 GROUP BY EXTRACT(MONTH FROM date), species;"}
+{"id":47,"answer":"SELECT Category, AVG(Reviews) OVER (PARTITION BY Category) AS avg_reviews FROM HeritageSitesReviews;"}
+{"id":48,"answer":"SELECT initiative, COUNT(*) AS initiative_count FROM language_preservation GROUP BY initiative;"}
+{"id":49,"answer":"SELECT DISTINCT p.patient_id FROM patients p JOIN therapy_sessions ts ON p.patient_id = ts.patient_id WHERE EXTRACT(MONTH FROM ts.session_date) = 6 AND EXTRACT(YEAR FROM ts.session_date) = 2021;"}
+{"id":50,"answer":"SELECT DISTINCT t.name FROM therapists t JOIN therapy_sessions ts ON t.therapist_id = ts.therapist_id JOIN patients p ON ts.patient_id = p.patient_id WHERE p.condition = 'depression' GROUP BY t.therapist_id, t.name HAVING COUNT(DISTINCT ts.patient_id) > 50;"}
+{"id":51,"answer":"SELECT COUNT(*) FROM patients p JOIN treatments t ON p.id = t.patient_id WHERE p.country = 'India' AND t.treatment = 'Group Therapy';"}
+{"id":52,"answer":"SELECT COUNT(*) AS num_projects, AVG(resilience_score) AS avg_resilience FROM Infrastructure WHERE location = 'California' AND is_public_works = TRUE;"}
+{"id":53,"answer":"SELECT location, AVG(DATEDIFF(completion_date, start_date)) AS avg_completion_time FROM public_works GROUP BY location ORDER BY avg_completion_time;"}
+{"id":54,"answer":"SELECT year, gender, race, SUM(CASE WHEN reoffender = TRUE THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS reoffender_percentage FROM parolee WHERE year IN (2017, 2018) GROUP BY year, gender, race;"}
+{"id":55,"answer":"SELECT d.name, SUM(rj.cases) AS total_cases FROM district d JOIN restorative_justice rj ON d.id = rj.district_id GROUP BY d.name;"}
+{"id":56,"answer":"SELECT type, SUM(biomass) AS total_biomass FROM biomass GROUP BY type ORDER BY type;"}
+{"id":57,"answer":"SELECT Director, AVG(Rating) AS avg_rating FROM DirectorMoviesRating GROUP BY Director;"}
+{"id":58,"answer":"SELECT AVG(rating) FROM movies WHERE country = 'USA' AND production_year BETWEEN 2010 AND 2020;"}
+{"id":59,"answer":"SELECT SUM(quantity) FROM GlobalDefense.AircraftSales WHERE buyer_country = 'Canada';"}
+{"id":60,"answer":"UPDATE resource_depletion SET resource_depletion_rate = 0.05 WHERE mine_id = 1;"}
+{"id":61,"answer":"SELECT plan_name FROM mobile_plans WHERE data_limit > (SELECT AVG(data_limit) FROM mobile_plans);"}
+{"id":62,"answer":"SELECT COUNT(*) FROM news WHERE region = 'region1';"}
+{"id":63,"answer":"SELECT AVG(word_count) FROM news WHERE category = 'Opinion';"}
+{"id":64,"answer":"SELECT mission_area, COUNT(*) AS total_count FROM Organizations GROUP BY mission_area;"}
+{"id":65,"answer":"SELECT SUM(e.PrizeMoney) AS total_prize FROM EsportsEvents e JOIN Games g ON e.GameName = g.GameName WHERE g.Genre = 'Simulation';"}
+{"id":66,"answer":"SELECT COUNT(*) FROM farm_automation WHERE automation_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);"}
+{"id":67,"answer":"SELECT Region, COUNT(*) AS service_count, RANK() OVER (ORDER BY COUNT(*) DESC) AS ranking FROM HealthcareServices GROUP BY Region;"}
+{"id":68,"answer":"SELECT p.park_name FROM parks p JOIN areas a ON p.area_id = a.area_id WHERE a.area_type = 'urban';"}
+{"id":69,"answer":"SELECT SUM(p.quantity) FROM production p JOIN companies c ON p.company_id = c.id WHERE p.year = 2020 AND p.element = 'Neodymium' AND c.region = 'APAC';"}
+{"id":70,"answer":"SELECT AVG(CASE WHEN quarter = 2 THEN affordability END) - AVG(CASE WHEN quarter = 1 THEN affordability END) AS affordability_change FROM portland_housing WHERE year = 2021;"}
+{"id":71,"answer":"SELECT mi.name, SUM(mi.revenue) AS total_revenue, mi.risk_score FROM restaurants r JOIN menu_items mi ON r.category = mi.category WHERE r.category = 'Fine Dining' GROUP BY mi.name, mi.risk_score;"}
+{"id":72,"answer":"SELECT SUM(CASE WHEN year = 2022 THEN quantity ELSE 0 END) - SUM(CASE WHEN year = 2021 THEN quantity ELSE 0 END) AS quantity_diff FROM sales WHERE product_category = 'Apparel';"}
+{"id":73,"answer":"SELECT source_type, MAX(size) AS max_size, MIN(size) AS min_size FROM space_debris GROUP BY source_type;"}
+{"id":74,"answer":"SELECT * FROM cybersecurity_policies WHERE date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);"}
+{"id":75,"answer":"SELECT DISTINCT country FROM security_incidents WHERE country IN ('France', 'Germany', 'Italy', 'Spain', 'Portugal', 'Netherlands', 'Belgium', 'Austria', 'Sweden', 'Denmark', 'Finland', 'Ireland', 'Greece', 'Poland', 'Czech Republic', 'Hungary', 'Romania', 'Bulgaria', 'Croatia', 'Slovakia', 'Slovenia', 'Estonia', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Cyprus');"}
+{"id":76,"answer":"SELECT COUNT(*) FROM multimodal_trips_canada WHERE city = 'Toronto';"}
+{"id":77,"answer":"SELECT name FROM unions WHERE id NOT IN (SELECT union_id FROM injuries);"}
+{"id":78,"answer":"SELECT COUNT(*) FROM Unions WHERE Sector = 'Education' AND Membership > 5000;"}
+{"id":79,"answer":"SELECT MAX(w.wage) FROM unions u JOIN workers w ON u.id = w.union_id WHERE w.industry = 'retail';"}
+{"id":80,"answer":"SELECT AVG(vt.travel_time) AS avg_travel_time FROM Routes r JOIN VesselTravel vt ON r.route_id = vt.route WHERE r.departure_port = 'Valparaiso' AND r.arrival_port = 'Singapore' AND vt.departure_date BETWEEN '2021-01-01' AND '2021-06-30';"}
+{"id":81,"answer":"SELECT COUNT(DISTINCT vessel_id) FROM PortCalls WHERE port = 'PortA' AND MONTH(call_date) = 3 AND YEAR(call_date) = 2021;"}
+{"id":82,"answer":"SELECT region, AVG(tipping_fee) AS avg_tipping_fee FROM Landfill_All GROUP BY region;"}
+{"id":83,"answer":"UPDATE wastewater_plants SET capacity = 1000 WHERE id = 1;"}
+{"id":84,"answer":"SELECT application_name, fairness_score FROM CreativeAI WHERE region = 'Europe' ORDER BY fairness_score DESC;"}
+{"id":85,"answer":"SELECT application_name, fairness_score FROM CreativeAI WHERE region = 'Oceania' ORDER BY fairness_score ASC;"}
+{"id":86,"answer":"SELECT AVG(safety_score) FROM creative_ai WHERE country IN ('France', 'Germany', 'Spain');"}
+{"id":87,"answer":"SELECT continent, AVG(CASE WHEN dataset = 'datasetD' THEN satisfaction END) - AVG(CASE WHEN dataset = 'datasetC' THEN satisfaction END) AS score_diff FROM models GROUP BY continent;"}
+{"id":88,"answer":"SELECT MAX(crop_yield) FROM crop_yields WHERE region = 'South America' AND year = 2021;"}
+{"id":89,"answer":"SELECT name, launch_date FROM Satellite WHERE type = 'Navigation';"}
+{"id":90,"answer":"SELECT name, state, funding / area_size AS funding_per_sqkm FROM north_american_conservation_areas;"}
+{"id":91,"answer":"SELECT Country, SUM(CASE WHEN Success = true THEN Programs ELSE 0 END) * 1.0 / SUM(Programs) AS success_rate FROM CountryPrograms GROUP BY Country ORDER BY success_rate DESC;"}
+{"id":92,"answer":"SELECT SUM(nutrients) FROM feeding;"}
+{"id":93,"answer":"SELECT COUNT(DISTINCT attendee_id) AS repeat_attendees, AVG(visit_count) AS avg_visits FROM (SELECT attendee_id, COUNT(*) AS visit_count FROM MuseumY WHERE visit_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR) GROUP BY attendee_id HAVING COUNT(*) > 1) t;"}
+{"id":94,"answer":"SELECT SongName, Artist, Genre, Streams FROM Music WHERE Streams = (SELECT MAX(Streams) FROM Music m2 WHERE m2.Genre = Music.Genre) OR Streams = (SELECT MIN(Streams) FROM Music m3 WHERE m3.Genre = Music.Genre);"}
+{"id":95,"answer":"SELECT SUM(cost) FROM construction_labor WHERE state = 'Georgia' AND job = 'Plumber';"}
+{"id":96,"answer":"SELECT Country, Year, SUM(Rainfall) AS total_rainfall, RANK() OVER (ORDER BY SUM(Rainfall) DESC) AS ranking FROM RainfallData GROUP BY Country, Year;"}
+{"id":97,"answer":"SELECT region, AVG(amount) AS avg_climate_finance FROM org_climate_finance WHERE region IN ('americas', 'europe') GROUP BY region;"}
+{"id":98,"answer":"DELETE FROM rd_expenditures WHERE amount > 100000 AND quarter = 1 AND year = 2021;"}
+{"id":99,"answer":"SELECT Year, AVG(Score) AS avg_score FROM HealthcareAccessScore WHERE Area = 'Urban' GROUP BY Year;"}
+{"id":100,"answer":"SELECT COUNT(*) FROM HealthcareAccess WHERE Gender = 'Male' AND AccessDate >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);"}
+{"id":101,"answer":"SELECT investment_year, industry, SUM(investment_amount) AS total_investment FROM investments GROUP BY investment_year, industry;"}
+{"id":102,"answer":"UPDATE policy_advocacy_budget SET budget = 500000 WHERE community = 'Native American' AND state = 'California' AND fiscal_year = YEAR(CURDATE());"}
+{"id":103,"answer":"SELECT location, COUNT(*) AS sighting_count FROM whale_sharks GROUP BY location;"}
+{"id":104,"answer":"SELECT country, AVG(avg_depth) AS avg_depth FROM marine_protected_areas GROUP BY country;"}
+{"id":105,"answer":"SELECT transaction_count FROM digital_assets WHERE asset_name = 'ETH';"}
+{"id":106,"answer":"SELECT COUNT(*) FROM MakeupSales WHERE is_vegan = true AND country = 'India' AND sale_date BETWEEN '2022-01-01' AND '2022-03-31';"}
+{"id":107,"answer":"SELECT SUM(s.revenue) AS total_revenue FROM SkincareSales s JOIN ProductIngredients pi ON s.productID = pi.productID WHERE s.region = 'North America' AND pi.organic = false;"}
+{"id":108,"answer":"SELECT MAX(ticket_sales) FROM EventData WHERE city = 'Tokyo';"}
+{"id":109,"answer":"SELECT Contract_Name, Value, RANK() OVER (ORDER BY Value DESC) AS ranking FROM Defense_Contracts;"}
+{"id":110,"answer":"SELECT country_id, COUNT(*) AS operation_count FROM peacekeeping_operations WHERE quarter = 3 AND year = 2018 GROUP BY country_id;"}
+{"id":111,"answer":"SELECT transaction_id, customer_id, transaction_date FROM transactions WHERE transaction_value > 10000 ORDER BY transaction_date DESC;"}
+{"id":112,"answer":"SELECT strategy_name, AVG(account_balance) AS avg_balance FROM customers GROUP BY strategy_name;"}
+{"id":113,"answer":"SELECT COUNT(*) FROM accounts_by_region WHERE region = 'Northwest' AND risk_level = 'high';"}
+{"id":114,"answer":"SELECT p.name, AVG(c.weight) AS avg_weight FROM ports p JOIN vessels v ON p.id = v.port_id JOIN cargo c ON v.id = c.vessel_id WHERE v.type = 'Bulk Carrier' GROUP BY p.name;"}
+{"id":115,"answer":"SELECT port, SUM(weight) AS total_weight FROM cargo_handling WHERE date BETWEEN '2022-02-01' AND '2022-02-28' GROUP BY port;"}
+{"id":116,"answer":"SELECT AVG(e.salary) AS avg_salary FROM factories f JOIN employees e ON f.factory_id = e.factory_id WHERE f.certified = TRUE;"}
+{"id":117,"answer":"SELECT MIN(avg_age) AS min_avg_age, MAX(avg_age) AS max_avg_age FROM rural_hospitals;"}
+{"id":118,"answer":"SELECT platform, user_count FROM platform_users_africa;"}
+{"id":119,"answer":"SELECT g.grade_name, AVG(smh.mental_health_score) AS avg_score FROM grades g JOIN student_mental_health smh ON g.grade_id = smh.grade_id GROUP BY g.grade_name ORDER BY avg_score;"}
+{"id":120,"answer":"SELECT SUM(count) AS total_plants FROM power_plants WHERE state = 'Texas';"}
+{"id":121,"answer":"SELECT MAX(capacity) FROM solar_capacity WHERE country = 'Mexico';"}
+{"id":122,"answer":"SELECT COUNT(*) FROM wells WHERE company = 'CompanyA';"}
+{"id":123,"answer":"SELECT hp.name, AVG(hp.points) AS avg_points FROM hockey_players hp JOIN nhl_teams nt ON hp.id = nt.players_id GROUP BY hp.name;"}
+{"id":124,"answer":"SELECT project_name FROM accessibility.research WHERE region = 'EU' INTERSECT SELECT project_name FROM accessibility.research WHERE region = 'Africa';"}
+{"id":125,"answer":"UPDATE students SET registration_date = '2021-10-01' WHERE name = 'Sofia Garcia';"}
+{"id":126,"answer":"SELECT country, AVG(price) AS avg_price FROM eco_materials GROUP BY country;"}
+{"id":127,"answer":"SELECT DISTINCT m.material FROM Companies c JOIN Materials m ON c.id = m.company_id WHERE c.region = 'Asia-Pacific';"}
+{"id":128,"answer":"SELECT product_name FROM shariah_compliant_products WHERE region = 'Southeast Asia';"}
+{"id":129,"answer":"SELECT sm.customer_name, sm.account_balance FROM shariah_mortgages sm JOIN socially_responsible_loans srl ON sm.customer_id = srl.customer_id;"}
+{"id":130,"answer":"SELECT COUNT(*) AS total_volunteers, SUM(CASE WHEN region = 'Africa' THEN 1 ELSE 0 END) AS africa_volunteers FROM volunteers;"}
+{"id":131,"answer":"SELECT * FROM FoodSuppliers WHERE country = 'India' AND delivery_incidents > 3 AND last_delivery_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH);"}
+{"id":132,"answer":"SELECT SUM(od.num_initiatives) AS total_initiatives FROM africa_countries ac JOIN open_data od ON ac.country = od.country WHERE od.year = 2018;"}
+{"id":133,"answer":"SELECT name, amount FROM donors WHERE city = 'Chicago' ORDER BY amount DESC LIMIT 3;"}
+{"id":134,"answer":"SELECT a.name, SUM(p.cites) AS total_cites FROM authors a JOIN publications p ON a.name = p.author WHERE a.department = 'Mathematics' AND p.year >= YEAR(CURDATE()) - 5 GROUP BY a.name ORDER BY total_cites DESC LIMIT 3;"}
+{"id":135,"answer":"SELECT country, AVG(capacity) OVER (PARTITION BY country) AS avg_capacity FROM renewable_energy_projects;"}
+{"id":136,"answer":"SELECT site_name, visitor_count FROM cultural_heritage_sites WHERE country = 'Japan' ORDER BY visitor_count DESC;"}
+{"id":137,"answer":"SELECT COUNT(*) FROM tunnels WHERE state = 'WA' AND build_year > 2010;"}
+{"id":138,"answer":"SELECT Project_Type, AVG(Resilience_Score) AS avg_resilience FROM Infrastructure_Projects WHERE State = 'Texas' AND Year = 2021 GROUP BY Project_Type;"}
+{"id":139,"answer":"SELECT SUM(cost) FROM Infrastructure_Projects WHERE state = 'California';"}
+{"id":140,"answer":"SELECT name, num_tools FROM justice_schemas.legal_tech_providers WHERE is_active = TRUE;"}
+{"id":141,"answer":"DELETE FROM ocean_pollution WHERE pollution_date < DATE_SUB(CURDATE(), INTERVAL 10 YEAR);"}
+{"id":142,"answer":"SELECT * FROM pollution_control_projects WHERE start_date > '2015-12-31' ORDER BY budget;"}
+{"id":143,"answer":"SELECT * FROM marine_sightings WHERE species = 'Whale Shark';"}
+{"id":144,"answer":"SELECT max_depth, min_depth FROM ocean_depths WHERE ocean = 'Arctic Ocean';"}
+{"id":145,"answer":"SELECT release_year, COUNT(*) AS movie_count FROM movies GROUP BY release_year;"}
+{"id":146,"answer":"SELECT item_name, category FROM Menu WHERE sustainability_score > 90;"}
+{"id":147,"answer":"SELECT SUM(cost) FROM ingredients WHERE is_gluten_free = TRUE;"}
+{"id":148,"answer":"INSERT INTO mining_operations (operation_id, operation_name, location) VALUES (4, 'Operation E', 'Australia'); INSERT INTO water_consumption (operation_id, water_consumption_cubic_meters) VALUES (4, 500);"}
+{"id":149,"answer":"SELECT ms.name, e.role, COUNT(*) AS num_employees FROM mining_sites ms JOIN employees e ON ms.id = e.site_id WHERE ms.location = 'Western US' GROUP BY ms.name, e.role;"}
+{"id":150,"answer":"DELETE FROM customers WHERE data_usage < 5;"}
+{"id":151,"answer":"SELECT region, COUNT(*) AS total_complaints FROM complaints GROUP BY region;"}
+{"id":152,"answer":"DELETE FROM comments WHERE user_id IN (SELECT id FROM users WHERE age < 18);"}
+{"id":153,"answer":"SELECT MIN(depth) FROM deep_sea_expeditions WHERE location LIKE '%Atlantic%';"}
+{"id":154,"answer":"SELECT Team, Game, SUM(Kills) AS total_kills FROM GameStats GROUP BY Team, Game ORDER BY total_kills DESC LIMIT 2;"}
+{"id":155,"answer":"WITH easy_achievements AS (SELECT achievement_id FROM player_achievements WHERE achievement_difficulty = 'easy') UPDATE player_achievements SET achievement_difficulty = 'completed' WHERE achievement_id IN (SELECT achievement_id FROM easy_achievements);"}
+{"id":156,"answer":"SELECT Region, COUNT(*) AS event_count FROM Events GROUP BY Region ORDER BY event_count DESC LIMIT 1;"}
+{"id":157,"answer":"DELETE FROM SoilMoistureData WHERE sensor_id = 10 AND date < '2023-02-28';"}
+{"id":158,"answer":"SELECT SUM(ba.budget) AS total_budget, SUM(ba.budget) / tb.total_budget * 100 AS percentage FROM budget_allocation ba JOIN total_budget tb ON ba.state = tb.state WHERE ba.state = 'New York';"}
+{"id":159,"answer":"SELECT country, production FROM production ORDER BY production DESC LIMIT 3;"}
+{"id":160,"answer":"SELECT COUNT(*) FROM properties WHERE city = 'Austin' AND listing_price < 400000 AND sustainable = TRUE;"}
+{"id":161,"answer":"SELECT AVG(pvh.Property_Value) AS avg_value FROM Property_Value_History pvh JOIN Property_Details pd ON pvh.Property_ID = pd.Property_ID WHERE pd.Underrepresented = 'Yes';"}
+{"id":162,"answer":"SELECT COUNT(*) FROM wind_projects_2 WHERE country IN ('Germany', 'Sweden') AND completion_year IN (2019, 2020);"}
+{"id":163,"answer":"SELECT state, AVG(rating) AS avg_rating FROM Residential_Buildings GROUP BY state;"}
+{"id":164,"answer":"SELECT COUNT(*) FROM dishes WHERE type = 'vegetarian' AND id NOT IN (SELECT dish_id FROM menus);"}
+{"id":165,"answer":"SELECT SUM(r.revenue) AS total_revenue FROM menus m JOIN revenue r ON m.menu_id = r.menu_id WHERE m.dish_type = 'Breakfast' AND m.location = 'Downtown';"}
+{"id":166,"answer":"CREATE VIEW sustainable_suppliers AS SELECT * FROM suppliers WHERE sustainability_score > 80;"}
+{"id":167,"answer":"SELECT s.location, COUNT(e.employee_id) AS num_employees FROM stores s LEFT JOIN employees e ON s.store_id = e.store_id WHERE s.country = 'Canada' GROUP BY s.store_id, s.location;"}
+{"id":168,"answer":"SELECT SUM(mass) FROM space_objects_heo WHERE orbit = 'High Earth Orbit';"}
+{"id":169,"answer":"SELECT gender, CASE WHEN age < 30 THEN '18-29' WHEN age BETWEEN 30 AND 39 THEN '30-39' WHEN age BETWEEN 40 AND 49 THEN '40-49' ELSE '50+' END AS age_group, COUNT(*) * 100.0 / (SELECT COUNT(*) FROM wellbeing_participants WHERE last_event_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)) AS percentage FROM wellbeing_participants WHERE last_event_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH) GROUP BY gender, age_group;"}
+{"id":170,"answer":"SELECT SUM(revenue) FROM merchandise_sales WHERE team = 'Los Angeles Lakers' AND quarter = 'Q1';"}
+{"id":171,"answer":"DELETE FROM exploits WHERE name = 'Zero-day exploit';"}
+{"id":172,"answer":"SELECT severity, COUNT(*) AS count FROM vulnerabilities WHERE category = 'Malware' GROUP BY severity;"}
+{"id":173,"answer":"SELECT COUNT(*) FROM transportation_systems WHERE system_type = 'Bicycle-Sharing';"}
+{"id":174,"answer":"SELECT MAX(trips_per_day) FROM bike_trips WHERE city = 'Paris';"}
+{"id":175,"answer":"SELECT AVG(Amount) FROM Claims WHERE Region = 'East';"}
+{"id":176,"answer":"SELECT COUNT(*) FROM ElectricVehicleAdoptionCAUK WHERE IsCAUK = 1;"}
+{"id":177,"answer":"SELECT e.type, COUNT(t.id) AS num_visitors FROM Exhibitions e JOIN Tickets t ON e.id = t.exhibition_id GROUP BY e.type;"}
+{"id":178,"answer":"SELECT COUNT(*) FROM landfills WHERE location = 'Tokyo' AND capacity > 100000;"}
+{"id":179,"answer":"SELECT MAX(duration) FROM workout_data WHERE workout_type = 'Yoga';"}
+{"id":180,"answer":"SELECT crop_type, SUM(investment_amount) AS total_investment FROM Investment_Data GROUP BY crop_type;"}
+{"id":181,"answer":"SELECT Country, COUNT(*) AS satellite_count FROM Satellites GROUP BY Country ORDER BY satellite_count DESC LIMIT 3;"}
+{"id":182,"answer":"SELECT SUM(number_of_fish) FROM fish_farms WHERE location = 'North Atlantic Ocean';"}
+{"id":183,"answer":"SELECT SUM(attendance) FROM events WHERE event_type = 'Poetry Reading' AND city = 'San Francisco';"}
+{"id":184,"answer":"SELECT AVG(rating) FROM kdramas WHERE release_year BETWEEN 2016 AND 2018;"}
+{"id":185,"answer":"SELECT COUNT(*) FROM cases WHERE YEAR(open_date) = 2021;"}
+{"id":186,"answer":"SELECT region, COUNT(*) AS flu_count FROM flu_cases GROUP BY region;"}
+{"id":187,"answer":"SELECT Country, ObesityRate FROM ObesityRates WHERE Continent = 'North America' AND Year = 2019;"}
+{"id":188,"answer":"UPDATE marine_species SET common_name = 'California market squid' WHERE scientific_name = 'Loligo opalescens';"}
+{"id":189,"answer":"SELECT MIN(min_depth) FROM marine_species_depths;"}
+{"id":190,"answer":"SELECT ocean_basin, MIN(temperature) AS min_temperature FROM ocean_temperature GROUP BY ocean_basin;"}
+{"id":191,"answer":"SELECT COUNT(*) FROM transactions;"}
+{"id":192,"answer":"CREATE TABLE ingredient_sourcing (ingredient_id INT, supplier_id INT, sourcing_date DATE, PRIMARY KEY (ingredient_id, sourcing_date));"}
+{"id":193,"answer":"SELECT MAX(pieces) FROM artists_oil WHERE medium = 'oil';"}
+{"id":194,"answer":"SELECT MIN(year) FROM Peacekeeping_Years WHERE location = 'Asia';"}
+{"id":195,"answer":"SELECT Country, SUM(Operations) AS total_operations, RANK() OVER (ORDER BY SUM(Operations) DESC) AS ranking FROM PeacekeepingOperations GROUP BY Country;"}
+{"id":196,"answer":"SELECT COUNT(DISTINCT c.id) FROM clients c JOIN transactions t ON c.id = t.client_id WHERE c.city = 'Sydney' AND EXTRACT(MONTH FROM t.transaction_time) = 2;"}
+{"id":197,"answer":"SELECT AVG(er.avg_return) FROM etfs e JOIN etf_returns er ON e.etf_id = er.etf_id WHERE e.expense_ratio < 0.2 AND er.year = YEAR(CURDATE()) - 1;"}
+{"id":198,"answer":"SELECT p.port_name, MAX(c.weight) AS max_weight FROM ports p JOIN cargo c ON p.port_id = c.port_id WHERE p.port_name IN ('Hong Kong', 'Shanghai') GROUP BY p.port_name;"}
+{"id":199,"answer":"SELECT vessel_id, cargo_type, COUNT(*) AS frequency FROM cargo GROUP BY vessel_id, cargo_type ORDER BY vessel_id, frequency DESC;"}
+{"id":200,"answer":"SELECT category, budget - LAG(budget) OVER (PARTITION BY category ORDER BY budget_date) AS budget_increase FROM programs ORDER BY budget_increase DESC LIMIT 3;"}
+{"id":201,"answer":"SELECT name, location FROM factories WHERE diversity_score > 85;"}
+{"id":202,"answer":"UPDATE music_consumption SET listens = 200 WHERE artist_id = 1;"}
+{"id":203,"answer":"SELECT DISTINCT a1.ArtistID FROM ArtistDecades a1 JOIN ArtistDecades a2 ON a1.ArtistID = a2.ArtistID WHERE a2.DecadeStartYear > a1.DecadeEndYear + 10;"}
+{"id":204,"answer":"SELECT DISTINCT city FROM Donors WHERE city NOT IN (SELECT DISTINCT city FROM Programs);"}
+{"id":205,"answer":"SELECT SUM(energy_produced) FROM geothermal_power WHERE country = 'Indonesia';"}
+{"id":206,"answer":"SELECT team_name, points_home - points_away AS point_difference FROM baseball_season;"}
+{"id":207,"answer":"SELECT COUNT(*) FROM schools WHERE location = 'Rural';"}
+{"id":208,"answer":"SELECT c.customer_id FROM customers c JOIN shariah_finance sf ON c.customer_id = sf.customer_id WHERE c.has_shariah_compliant_finance = TRUE AND c.financial_wellbeing > 80;"}
+{"id":209,"answer":"SELECT customer_id, SUM(balance) AS total_deposits, RANK() OVER (ORDER BY SUM(balance) DESC) AS ranking FROM deposits WHERE account_type = 'Shariah-compliant' GROUP BY customer_id;"}
+{"id":210,"answer":"SELECT warehouse_id, revenue * 0.9 AS discounted_revenue FROM warehouse_revenue;"}
+{"id":211,"answer":"SELECT funding_source_type, COUNT(*) AS count FROM funding_sources GROUP BY funding_source_type;"}
+{"id":212,"answer":"SELECT COUNT(*) FROM biosensors.sensors WHERE location IN ('Seoul', 'Beijing', 'Sydney', 'Tokyo');"}
+{"id":213,"answer":"SELECT COUNT(*) FROM grant WHERE department = 'Computer Science' AND YEAR(grant_date) = 2020;"}
+{"id":214,"answer":"SELECT gender, COUNT(*) AS count FROM Faculty WHERE department_id = (SELECT id FROM Department WHERE name = 'Mathematics') GROUP BY gender;"}
+{"id":215,"answer":"SELECT dept_name, COUNT(*) AS num_grants FROM research_grants GROUP BY dept_name;"}
+{"id":216,"answer":"SELECT MAX(energy_consumption) FROM green_buildings WHERE country IN ('India', 'China', 'Japan', 'South Korea', 'Indonesia', 'Malaysia', 'Thailand', 'Vietnam', 'Philippines', 'Singapore', 'Bangladesh', 'Pakistan', 'Sri Lanka');"}
+{"id":217,"answer":"SELECT tour_id, age_group, COUNT(*) AS user_count FROM virtual_tour_users GROUP BY tour_id, age_group;"}
+{"id":218,"answer":"SELECT language, arts FROM languages WHERE region = 'Oceania';"}
+{"id":219,"answer":"SELECT r.name, COUNT(ap.id) AS total_pieces FROM regions r JOIN art_pieces ap ON r.id = ap.region_id WHERE r.population > 500000 GROUP BY r.name;"}
+{"id":220,"answer":"SELECT SUM(quantity) FROM ArtPieces WHERE country IN ('USA', 'Canada', 'Mexico');"}
+{"id":221,"answer":"SELECT c.condition, COUNT(*) AS treatment_count FROM patients p JOIN treatments t ON p.id = t.patient_id JOIN conditions c ON p.id = c.patient_id WHERE p.country = 'Canada' AND YEAR(t.treatment_date) = 2022 GROUP BY c.condition ORDER BY treatment_count DESC;"}
+{"id":222,"answer":"SELECT clinic_name, years_operational FROM justice_schemas.legal_aid_clinics WHERE years_operational > 5;"}
+{"id":223,"answer":"SELECT COUNT(*) FROM marine_conservation_initiatives WHERE region = 'Indian Ocean' AND year IN (2015, 2016);"}
+{"id":224,"answer":"SELECT COUNT(*) FROM SouthPacificPollution WHERE location = 'South Pacific Ocean';"}
+{"id":225,"answer":"SELECT COUNT(*) FROM marine_life WHERE location = 'Southern Ocean';"}
+{"id":226,"answer":"SELECT station_name, latitude, longitude FROM Research_Station WHERE ocean_name = 'Atlantic';"}
+{"id":227,"answer":"SELECT AVG(depth) FROM ocean_floor_mapping WHERE region = 'Arctic';"}
+{"id":228,"answer":"SELECT genre, SUM(frequency) AS total_frequency FROM media_content GROUP BY genre;"}
+{"id":229,"answer":"SELECT AVG(quantity) AS avg_quantity FROM orders;"}
+{"id":230,"answer":"SELECT DISTINCT m1.subscriber_id FROM mobile_usage_detailed m1 JOIN mobile_usage_detailed m2 ON m1.subscriber_id = m2.subscriber_id AND m2.month = m1.month + 1 WHERE (m1.speed - m2.speed) / m1.speed > 0.25 ORDER BY m1.subscriber_id;"}
+{"id":231,"answer":"SELECT region, COUNT(*) AS subscriber_count FROM mobile_subscribers GROUP BY region;"}
+{"id":232,"answer":"SELECT COUNT(*) FROM broadband_subscribers WHERE subscriber_location = 'Urban';"}
+{"id":233,"answer":"SELECT country, COUNT(DISTINCT cause) AS unique_causes FROM volunteers GROUP BY country;"}
+{"id":234,"answer":"SELECT Gender, COUNT(*) AS player_count FROM Players GROUP BY Gender;"}
+{"id":235,"answer":"UPDATE games SET genre = 'Simulation' WHERE name = 'Civilization';"}
+{"id":236,"answer":"SELECT COUNT(*) FROM PrecisionFarming.IoT_Sensors WHERE measurement = 'moisture' AND install_date > '2019-01-01';"}
+{"id":237,"answer":"SELECT AVG(price / size) AS avg_price_per_sqft FROM bay_area_prop WHERE co_ownership = TRUE;"}
+{"id":238,"answer":"SELECT id, city, co_ownership_cost, co_ownership_cost - LAG(co_ownership_cost) OVER (ORDER BY id) AS cost_change FROM co_ownership;"}
+{"id":239,"answer":"SELECT SUM(p.size) AS total_sqft FROM urban_areas ua JOIN properties p ON ua.area = p.area WHERE ua.affordable = TRUE;"}
+{"id":240,"answer":"SELECT country, AVG(capacity) AS avg_capacity FROM projects GROUP BY country;"}
+{"id":241,"answer":"SELECT menu_item, sales FROM Sales WHERE restaurant_name = 'Bistro Italiano' ORDER BY sales DESC LIMIT 1;"}
+{"id":242,"answer":"SELECT COUNT(*) FROM space_objects_count;"}
+{"id":243,"answer":"SELECT COUNT(*) FROM AstronautData WHERE country = 'Brazil';"}
+{"id":244,"answer":"SELECT policy_name FROM cybersecurity_policies WHERE last_updated = '2022-01-01';"}
+{"id":245,"answer":"SELECT COUNT(*) FROM artworks WHERE artist = 'Vincent van Gogh';"}
+{"id":246,"answer":"SELECT AVG(va.visitor_age) FROM visitor_attendance va JOIN exhibitions e ON va.exhibition_id = e.id WHERE e.name = 'Modern Art';"}
+{"id":247,"answer":"SELECT ap.city, awc.water_consumption / ap.population AS per_capita_consumption FROM asia_population ap JOIN asia_water_consumption awc ON ap.city = awc.city AND ap.year = awc.year WHERE ap.year = 2019 AND ap.city IN ('Tokyo', 'Seoul');"}
+{"id":248,"answer":"SELECT SUM(consumption) FROM water_consumption WHERE user_category = 'residential' AND MONTH(usage_date) = 7 AND YEAR(usage_date) = 2021;"}
+{"id":249,"answer":"SELECT m.age_group, SUM(w.distance) AS total_distance FROM workouts w JOIN members m ON w.member_id = m.id GROUP BY m.age_group;"}
+{"id":250,"answer":"DELETE FROM unsafe_ai_algorithms WHERE incidents > 200 AND year = 2022;"}
+{"id":251,"answer":"SELECT 'Europe' AS region, project_type, COUNT(*) AS num_projects FROM economic_diversification WHERE region = 'Europe' GROUP BY project_type UNION ALL SELECT 'Oceania' AS region, project_type, COUNT(*) AS num_projects FROM economic_diversification WHERE region = 'Oceania' GROUP BY project_type;"}
+{"id":252,"answer":"DELETE FROM aircraft_manufacturing WHERE year_manufactured < 2000;"}
+{"id":253,"answer":"SELECT MAX(num_flights) FROM flights;"}
+{"id":254,"answer":"INSERT INTO habitat_preservation (habitat_preservation_id, location_id, preservation_method, start_date, end_date, area_preserved) VALUES (3, 2, 'Planting new trees', '2022-01-01', '2023-12-31', 500);"}
+{"id":255,"answer":"SELECT SUM(area_size) FROM MarineProtectedAreas WHERE ocean = 'Atlantic Ocean' AND area_size > 100000;"}
+{"id":256,"answer":"SELECT SUM(funding_amount) FROM Programs WHERE focus = 'Art' AND state IN ('Texas', 'California');"}
+{"id":257,"answer":"SELECT COUNT(*) FROM Movies WHERE Genre IN ('Comedy', 'Action') AND ProductionBudget > 100000000;"}
+{"id":258,"answer":"SELECT SUM(revenue) FROM african_american_movies WHERE release_year = 2020;"}
+{"id":259,"answer":"INSERT INTO compliance_violations (id, dispensary_id, violation_date, description) VALUES (4, 1, '2022-01-05', 'Expired products');"}
+{"id":260,"answer":"SELECT c.CustomerName, SUM(p.TotalPaid) AS total_paid FROM Customers c JOIN Purchases p ON c.CustomerID = p.CustomerID WHERE p.DispensaryName = 'Green Earth' GROUP BY c.CustomerName ORDER BY total_paid DESC LIMIT 3;"}
+{"id":261,"answer":"SELECT COUNT(*) FROM Cases WHERE AttorneyID = (SELECT AttorneyID FROM Attorneys WHERE Name = 'Jane Doe');"}
+{"id":262,"answer":"SELECT chemical, cost FROM chemical_costs ORDER BY cost ASC LIMIT 1;"}
+{"id":263,"answer":"SELECT DISTINCT shipped_to FROM shipments WHERE product = 'Chemical E' AND shipped_date >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH);"}
+{"id":264,"answer":"SELECT 'centers' AS type, COUNT(*) AS count FROM centers WHERE region = 'southwest' UNION ALL SELECT 'diseases' AS type, COUNT(*) AS count FROM diseases WHERE region = 'southwest';"}
+{"id":265,"answer":"SELECT crop_name, SUM(production_tons) AS total_production FROM organic_crops WHERE country IN ('Australia', 'New Zealand', 'Papua New Guinea') GROUP BY crop_name;"}
+{"id":266,"answer":"UPDATE StudentAccommodations SET AccommodationType = 'Sign Language Interpretation' WHERE StudentID = 2;"}
+{"id":267,"answer":"SELECT area_type, COUNT(*) AS num_programs, COUNT(*) * 100.0 / (SELECT COUNT(*) FROM programs) AS percentage FROM programs GROUP BY area_type;"}
+{"id":268,"answer":"SELECT name, daily_tx_volume, RANK() OVER (ORDER BY daily_tx_volume DESC) AS ranking FROM dapps LIMIT 5;"}
+{"id":269,"answer":"SELECT COUNT(*) FROM wildlife_habitats WHERE country = 'South Africa' AND area > 50000;"}
+{"id":270,"answer":"SELECT species FROM wildlife_species WHERE region = 'Amazon';"}
+{"id":271,"answer":"SELECT country, SUM(area_ha) AS total_area FROM country_habitat GROUP BY country;"}
+{"id":272,"answer":"SELECT country, COUNT(*) AS organic_count FROM cosmetics.ingredient_sourcing WHERE is_organic = TRUE GROUP BY country ORDER BY organic_count DESC LIMIT 1;"}
+{"id":273,"answer":"DELETE FROM Makeup WHERE Revenue < 25000;"}
+{"id":274,"answer":"SELECT product_name, COUNT(*) AS purchase_count FROM customer_purchases WHERE country = 'US' GROUP BY product_name ORDER BY purchase_count DESC LIMIT 1;"}
+{"id":275,"answer":"SELECT SUM(revenue) FROM CrueltyFreeSkincare WHERE country = 'Belgium';"}
+{"id":276,"answer":"SELECT SUM(events_held) FROM CulturalEvents WHERE country = 'Canada' AND year = 2021;"}
+{"id":277,"answer":"SELECT name, maintenance_cost FROM MilitaryEquipment WHERE region = 'Atlantic' AND maintenance_cost < 5000;"}
+{"id":278,"answer":"SELECT COUNT(*) FROM patents WHERE country = 'China' AND year = 2015;"}
+{"id":279,"answer":"SELECT country, SUM(amount) AS total_assistance FROM humanitarian_assistance WHERE region = 'Africa' GROUP BY country;"}
+{"id":280,"answer":"SELECT c.name, COUNT(*) AS total_patents FROM Military_Innovation_Patents mip JOIN Countries c ON mip.country = c.name WHERE mip.year >= YEAR(CURDATE()) - 3 GROUP BY c.name;"}
+{"id":281,"answer":"SELECT SUM(fi.investment) FROM clients c JOIN fund_investments fi ON c.client_id = fi.client_id WHERE c.name LIKE '%Patel%';"}
+{"id":282,"answer":"SELECT * FROM vessels WHERE capacity > 10000;"}
+{"id":283,"answer":"SELECT AVG(tonnage) FROM cargo_handling WHERE EXTRACT(MONTH FROM handling_date) = 4;"}
+{"id":284,"answer":"SELECT f.name, em.worker_count FROM factories f JOIN ethical_manufacturing em ON f.factory_id = em.factory_id;"}
+{"id":285,"answer":"SELECT SUM(num_beds) FROM hospitals WHERE state = 'Texas' AND specialty = 'cancer';"}
+{"id":286,"answer":"SELECT AVG(Age) AS AverageAge FROM Teachers;"}
+{"id":287,"answer":"SELECT AVG(s.mental_health_score) FROM students s JOIN courses c ON s.course_id = c.course_id WHERE c.course_type = 'Traditional';"}
+{"id":288,"answer":"SELECT gender, AVG(salary) AS avg_salary FROM employees GROUP BY gender;"}
+{"id":289,"answer":"SELECT p.production_count FROM wells w JOIN production p ON w.well_id = p.well_id WHERE w.well_id = 'A01' AND w.well_location = 'Gulf of Mexico';"}
+{"id":290,"answer":"SELECT athlete, SUM(gold) AS total_gold FROM winter_olympics GROUP BY athlete ORDER BY total_gold DESC;"}
+{"id":291,"answer":"SELECT name, season_points FROM points ORDER BY season_points DESC;"}
+{"id":292,"answer":"SELECT SUM(num_orgs) AS total FROM refugee_camps WHERE services = 'food_support' UNION ALL SELECT SUM(num_orgs) FROM disaster_zones WHERE services = 'food_support';"}
+{"id":293,"answer":"INSERT INTO factories (id, name, country, eco_friendly, workers) VALUES (3, 'Factory C', 'Vietnam', true, 180);"}
+{"id":294,"answer":"SELECT MIN(fw.wage) FROM FactoryWages fw JOIN Factories f ON fw.factory_id = f.factory_id WHERE f.region = 'Africa';"}
+{"id":295,"answer":"SELECT country, year, MIN(wage) OVER (PARTITION BY country ORDER BY year) AS min_wage FROM factories WHERE year >= YEAR(CURDATE()) - 3;"}
+{"id":296,"answer":"SELECT region, COUNT(*) AS num_factories, SUM(waste_generation) AS total_waste FROM textile_factories GROUP BY region;"}
+{"id":297,"answer":"SELECT fi.name FROM financial_institutions fi JOIN loans l ON fi.name = l.institution_name WHERE fi.location IN ('Singapore', 'Malaysia', 'Indonesia', 'Thailand', 'Philippines') AND fi.shariah_compliant = TRUE AND l.socially_responsible = TRUE;"}
+{"id":298,"answer":"SELECT COUNT(*) FROM Desserts WHERE is_dairy_free = TRUE AND country = 'France';"}
+{"id":299,"answer":"DELETE FROM shipments WHERE item = 'XYZ';"}
+{"id":300,"answer":"SELECT country, patent_count FROM bioprocess.patents WHERE year = 2021 ORDER BY patent_count DESC LIMIT 2;"}
+{"id":301,"answer":"SELECT District, COUNT(*) AS hearing_count FROM PublicHearings WHERE HearingDate >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH) GROUP BY District;"}
+{"id":302,"answer":"SELECT AVG(FundingAmount) FROM USFunding WHERE Funder = 'US' AND Sector = 'Climate Change' AND Year = 2021;"}
+{"id":303,"answer":"SELECT COUNT(*) FROM projects WHERE state = 'California' AND year_completed >= 2015 AND budget > 5000000 AND project_type = 'Solar';"}
+{"id":304,"answer":"SELECT SUM(revenue) FROM events WHERE country = 'USA' AND type = 'virtual';"}
+{"id":305,"answer":"SELECT country, COUNT(*) AS community_count FROM indigenous_communities GROUP BY country;"}
+{"id":306,"answer":"SELECT MIN(age) FROM patients WHERE treatment = 'Therapy' AND state = 'Colorado';"}
+{"id":307,"answer":"SELECT SUM(budget) FROM campaigns_2022 WHERE region = 'Northeast';"}
+{"id":308,"answer":"SELECT MIN(age) FROM diagnoses WHERE diagnosis_name = 'Depression' AND YEAR(diagnosis_date) = 2021;"}
+{"id":309,"answer":"SELECT MIN(cost) FROM InfrastructureProjects WHERE region = 'Central' AND project_type = 'tunnel';"}
+{"id":310,"answer":"SELECT country, SUM(eco_tourists) AS total_tourists FROM EcoTouristsQ1Q2 WHERE country IN ('Japan', 'Thailand', 'Indonesia') AND quarter IN (1, 2) GROUP BY country;"}
+{"id":311,"answer":"INSERT INTO marine_species_research (id, species, location, year, population) VALUES (4, 'Angler Fish', 'Mariana Trench', 2019, 100);"}
+{"id":312,"answer":"SELECT lead_actor_ethnicity, COUNT(*) AS count FROM movies WHERE production_country = 'USA' GROUP BY lead_actor_ethnicity ORDER BY count DESC LIMIT 3;"}
+{"id":313,"answer":"SELECT AVG(Quantity) AS avg_quantity FROM Daily_Region_Sales WHERE Region = 'Southeast' AND Menu_Item = 'Local Greens';"}
+{"id":314,"answer":"SELECT ce.year, ce.export_amount, co2.emission FROM chile_copper_export ce JOIN chile_co2_emission co2 ON ce.year = co2.year WHERE ce.year BETWEEN 2016 AND 2018;"}
+{"id":315,"answer":"SELECT AVG(m.productivity) AS avg_productivity, SUM(mc.production_volume) AS total_production FROM miners m JOIN mining_companies mc ON m.company_id = mc.company_id;"}
+{"id":316,"answer":"SELECT operation_name, environmental_impact FROM mining_operations WHERE environmental_impact > (SELECT AVG(environmental_impact) FROM mining_operations);"}
+{"id":317,"answer":"SELECT s.region, COUNT(s.id) AS broadband_count, SUM(sp.connection_speed) AS total_speed FROM subscribers s JOIN speeds sp ON s.id = sp.subscriber_id WHERE s.service = 'broadband' AND sp.year = 2021 GROUP BY s.region;"}
+{"id":318,"answer":"SELECT product_category, COUNT(*) AS subscriber_count FROM product_subscribers GROUP BY product_category;"}
+{"id":319,"answer":"SELECT MIN(revenue) FROM japan_streaming;"}
+{"id":320,"answer":"SELECT donor_id, SUM(donation_amount) AS total_donations FROM donations WHERE YEAR(donation_date) = 2022 GROUP BY donor_id ORDER BY total_donations DESC LIMIT 3;"}
+{"id":321,"answer":"SELECT * FROM Esports_Events WHERE PrizePool BETWEEN (SELECT MIN(PrizePool) FROM Esports_Events_NA) AND (SELECT MAX(PrizePool) FROM Esports_Events_NA);"}
+{"id":322,"answer":"SELECT MIN(Age) FROM Players WHERE MaxPlayers > 1;"}
+{"id":323,"answer":"SELECT n.NeighborhoodName, COUNT(*) AS num_properties FROM Neighborhoods n JOIN Properties p ON n.NeighborhoodID = p.NeighborhoodID WHERE p.CoOwned = TRUE AND p.Sold >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR) GROUP BY n.NeighborhoodName;"}
+{"id":324,"answer":"SELECT SUM(co2_emissions) FROM carbon_offset WHERE name = 'Plant a Tree';"}
+{"id":325,"answer":"SELECT r.RestaurantName, COUNT(CASE WHEN m.IsSustainable = 1 THEN 1 END) AS sustainable_count, COUNT(CASE WHEN m.IsSustainable = 1 THEN 1 END) * 100.0 / COUNT(*) AS sustainable_percentage FROM Restaurants r JOIN MenuItems m ON r.RestaurantID = m.RestaurantID GROUP BY r.RestaurantName;"}
+{"id":326,"answer":"INSERT INTO products (product_id, product_name, sourcing_type) VALUES (1, 'New Product', 'Circular Supply Chain');"}
+{"id":327,"answer":"CREATE TABLE products (product_id INT PRIMARY KEY, name VARCHAR(255), supplier_id INT, quantity_sold INT, price DECIMAL(5,2));"}
+{"id":328,"answer":"SELECT AVG(price) FROM products WHERE category = 'Electronics' AND is_circular_supply_chain = TRUE;"}
+{"id":329,"answer":"SELECT COUNT(*) FROM space_missions WHERE launch_country IN ('Japan', 'USA');"}
+{"id":330,"answer":"SELECT MAX(fans) FROM attendance;"}
+{"id":331,"answer":"SELECT COUNT(DISTINCT ip_address) FROM malware_activity_v2 WHERE region = 'Asia-Pacific' AND last_seen >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);"}
+{"id":332,"answer":"SELECT AVG(severity) FROM vulnerabilities WHERE section = 'Network' AND vulnerability_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);"}
+{"id":333,"answer":"SELECT make, COUNT(*) AS ev_count FROM vehicle_data WHERE is_ev = TRUE GROUP BY make;"}
+{"id":334,"answer":"SELECT store_id, SUM(revenue) AS total_revenue FROM sales WHERE region = 'Northern' GROUP BY store_id;"}
+{"id":335,"answer":"SELECT c.policy_number, c.claim_amount, c.claim_date FROM claims c WHERE c.policy_number IN (SELECT policy_number FROM claims GROUP BY policy_number HAVING COUNT(*) > 2 AND SUM(claim_amount) > 5000);"}
+{"id":336,"answer":"SELECT ct.cargo_type, SUM(ct.weight) AS total_weight FROM cargo_tracking ct JOIN vessels v ON ct.vessel_id = v.vessel_id WHERE v.vessel_name IN ('X', 'Y') GROUP BY ct.cargo_type;"}
+{"id":337,"answer":"SELECT rr.region, rr.recycling_rate FROM recycling_rates rr JOIN waste_type wt ON rr.waste_type = wt.waste_type WHERE wt.waste_type = 'Plastic';"}
+{"id":338,"answer":"SELECT r.Year, r.Rainfall, hwu.Water_Consumption FROM Rainfall r JOIN Household_Water_Usage hwu ON r.Year = hwu.Year WHERE hwu.City = 'Phoenix';"}
+{"id":339,"answer":"SELECT AVG(Salary) FROM Employees WHERE Department = 'Manufacturing';"}
+{"id":340,"answer":"SELECT e.type, e.programs, ap.animals, e.programs * 1.0 / ap.animals AS ratio FROM education e JOIN animal_population ap ON e.type = ap.type;"}
+{"id":341,"answer":"SELECT SUM(amount) FROM Funding WHERE program = 'Theater';"}
+{"id":342,"answer":"SELECT AgeGroup, SUM(Price) AS total_revenue FROM ArtClasses WHERE StartDate BETWEEN '2022-07-01' AND '2022-09-30' GROUP BY AgeGroup;"}
+{"id":343,"answer":"SELECT network, release_year, COUNT(*) AS show_count FROM tv_shows GROUP BY network, release_year;"}
+{"id":344,"answer":"SELECT COUNT(*) FROM Licenses WHERE type = 'cultivation' AND revoke_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);"}
+{"id":345,"answer":"SELECT COUNT(*) FROM Raw_Materials WHERE department = 'Plastic Production' AND supply_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);"}
+{"id":346,"answer":"SELECT Project, YEAR(Timestamp) AS year, MONTH(Timestamp) AS month, SUM(Cost) AS total_cost FROM CostData GROUP BY Project, YEAR(Timestamp), MONTH(Timestamp);"}
+{"id":347,"answer":"SELECT project_name, end_date FROM climate_mitigation WHERE region = 'Oceania';"}
+{"id":348,"answer":"SELECT AVG(investment_amount) FROM climate_finance_projects WHERE region = 'East Asia' AND investment_year >= YEAR(CURDATE()) - 5;"}
+{"id":349,"answer":"SELECT year, temperature FROM temperature_data WHERE region = 'Europe' AND year >= 2000 ORDER BY temperature ASC LIMIT 1;"}
+{"id":350,"answer":"SELECT year, SUM(sales) AS total_ev_sales FROM VehicleSales WHERE continent = 'Africa' AND vehicle_type = 'Electric' AND year >= 2015 GROUP BY year;"}
+{"id":351,"answer":"SELECT MAX(f.amount) FROM funding f JOIN startups s ON f.startup_id = s.id WHERE f.round = 'Series B' AND s.industry = 'E-Learning';"}
+{"id":352,"answer":"SELECT country, COUNT(*) AS female_founded FROM Companies WHERE founder_gender = 'Female' GROUP BY country;"}
+{"id":353,"answer":"SELECT AVG(f.amount) FROM companies c JOIN funding f ON c.id = f.company_id WHERE c.founder_gender = 'female';"}
+{"id":354,"answer":"SELECT SUM(total_funding) FROM startups WHERE industry = 'Software' AND founded_year < 2015;"}
+{"id":355,"answer":"SELECT ar.RequestID, ar.RequestDate, ar.ApprovalStatus FROM Students s JOIN AccommodationRequests ar ON s.StudentID = ar.StudentID WHERE s.DisabilityType = 'Visual Impairment';"}
+{"id":356,"answer":"SELECT ProgramName, Budget FROM DisabilitySupportPrograms WHERE Year = 2025 ORDER BY Budget DESC;"}
+{"id":357,"answer":"SELECT phylum, MAX(depth) AS max_depth FROM marine_species GROUP BY phylum;"}
+{"id":358,"answer":"SELECT ocean_basin, COUNT(*) AS total_areas FROM marine_protected_areas GROUP BY ocean_basin;"}
+{"id":359,"answer":"SELECT AVG(contract_count) FROM (SELECT d.id, COUNT(sc.id) AS contract_count FROM developers d LEFT JOIN smart_contracts sc ON d.id = sc.developer_id WHERE d.country IN ('Nigeria', 'South Africa', 'Egypt') GROUP BY d.id) t;"}
+{"id":360,"answer":"SELECT CrimeType, YEAR(Date) AS year, SUM(Count) AS total_count, SUM(Count) - LAG(SUM(Count)) OVER (PARTITION BY CrimeType ORDER BY YEAR(Date)) AS count_change FROM CrimeStatistics GROUP BY CrimeType, YEAR(Date);"}
+{"id":361,"answer":"SELECT DISTINCT artist_name FROM art_timeline WHERE year BETWEEN 1850 AND 1900;"}
+{"id":362,"answer":"SELECT AVG(unemployed_veterans * 100.0 / total_veterans) AS avg_unemployment_rate FROM veteran_employment WHERE quarter IN ('Q1', 'Q2');"}
+{"id":363,"answer":"SELECT AVG(balance) FROM accounts WHERE country IN ('India', 'China', 'Japan') AND account_date BETWEEN '2022-04-01' AND '2022-06-30';"}
+{"id":364,"answer":"SELECT p.PortName, SUM(v.GrossTonnage) AS total_tonnage FROM Port p JOIN Vessel v ON p.PortID = v.PortID WHERE v.VesselType = 'Container' GROUP BY p.PortName ORDER BY total_tonnage DESC LIMIT 3;"}
+{"id":365,"answer":"SELECT branch, rank, country, SUM(personnel) AS total_personnel FROM military_personnel GROUP BY branch, rank, country ORDER BY total_personnel DESC;"}
+{"id":366,"answer":"SELECT country, SUM(num_incidents) AS total_incidents FROM cybersecurity_incidents GROUP BY country;"}
+{"id":367,"answer":"SELECT c.country_name, COUNT(DISTINCT ms.user_id) AS unique_users FROM music_streams ms JOIN countries c ON ms.country_code = c.country_code GROUP BY c.country_name;"}
+{"id":368,"answer":"SELECT AVG(don.Amount) FROM Donors d JOIN Donations don ON d.DonorID = don.DonorID WHERE d.Country = 'USA';"}
+{"id":369,"answer":"SELECT AVG(donation) FROM Donors WHERE country = 'USA';"}
+{"id":370,"answer":"SELECT MAX(course_count) FROM (SELECT teacher_name, COUNT(*) AS course_count FROM teacher_professional_development WHERE YEAR(completion_date) = 2021 GROUP BY teacher_name) t;"}
+{"id":371,"answer":"SELECT COUNT(*) FROM storage_projects WHERE country = 'China' AND year_built BETWEEN 2010 AND 2020;"}
+{"id":372,"answer":"SELECT SUM(production_gas) FROM wells WHERE region = 'Alaska' AND production_date BETWEEN '2020-01-01' AND '2020-06-30';"}
+{"id":373,"answer":"SELECT AVG(attendance) FROM nfl_games;"}
+{"id":374,"answer":"SELECT SUM(q.quantity) AS total_quantity FROM textile_sources ts JOIN quantities q ON ts.source_id = q.source_id WHERE ts.material = 'Organic Cotton' AND ts.country IN ('India', 'Pakistan');"}
+{"id":375,"answer":"SELECT g.country_of_origin, SUM(o.revenue) AS total_revenue FROM Orders o JOIN Garments g ON o.garment_id = g.garment_id WHERE g.size_diverse = TRUE AND g.country_of_origin IN ('Brazil', 'Argentina', 'Colombia', 'Peru', 'Chile', 'Uruguay', 'Paraguay', 'Bolivia', 'Ecuador', 'Venezuela') GROUP BY g.country_of_origin;"}
+{"id":376,"answer":"SELECT AVG(amount) FROM loans WHERE country IN ('Turkey', 'Iran');"}
+{"id":377,"answer":"SELECT AVG(value) FROM shariah_investments WHERE country = 'United States';"}
+{"id":378,"answer":"SELECT COUNT(*) FROM incidents WHERE date LIKE '2020%';"}
+{"id":379,"answer":"SELECT MIN(salary) FROM FACULTY WHERE department = 'College of Arts and Humanities';"}
+{"id":380,"answer":"SELECT SUM(carbon_offset_tons) FROM CarbonOffsetInitiatives;"}
+{"id":381,"answer":"SELECT artist_name, statement_length FROM artist_statements ORDER BY statement_length DESC LIMIT 3;"}
+{"id":382,"answer":"SELECT Name, AVG(AnnualPrecipitation) OVER (PARTITION BY ID) AS avg_precipitation FROM WeatherStation;"}
+{"id":383,"answer":"SELECT COUNT(*) FROM TraditionalArts WHERE AddedDate >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);"}
+{"id":384,"answer":"SELECT SUM(services_provided) FROM legal_aid_services WHERE location = 'Rural Area' AND state = 'California' AND year = 2021;"}
+{"id":385,"answer":"SELECT AVG(max_depth) FROM marine_sites;"}
+{"id":386,"answer":"SELECT name, views FROM content_creators WHERE represents_group = TRUE ORDER BY views DESC;"}
+{"id":387,"answer":"SELECT * FROM mining_sites WHERE state = 'California';"}
+{"id":388,"answer":"SELECT s.id FROM subscribers s WHERE s.subscriber_type = 'Mobile' AND s.id NOT IN (SELECT DISTINCT subscriber_id FROM investments WHERE investment_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH));"}
+{"id":389,"answer":"SELECT id FROM subscribers WHERE monthly_data_usage = 0 OR last_data_usage_date < DATE_SUB(CURDATE(), INTERVAL 1 MONTH);"}
+{"id":390,"answer":"SELECT DISTINCT a.name FROM Artists a JOIN Festivals f1 ON a.id = f1.artist_id JOIN Festivals f2 ON a.id = f2.artist_id WHERE f1.country = 'US' AND f2.country = 'Canada';"}
+{"id":391,"answer":"SELECT user_region, article_category, AVG(time_spent) AS avg_time FROM user_sessions GROUP BY user_region, article_category;"}
+{"id":392,"answer":"SELECT SUM(word_count) FROM media.articles WHERE author = 'John Doe';"}
+{"id":393,"answer":"SELECT Name, Game, Score FROM Players WHERE Score > (SELECT MAX(Score) FROM Players WHERE Game = 'GameA');"}
+{"id":394,"answer":"SELECT COUNT(*) * 100.0 / (SELECT COUNT(*) FROM TotalPlayers) AS percentage FROM TotalPlayers WHERE Genre IN ('FPS', 'Action');"}
+{"id":395,"answer":"SELECT AVG(precipitation) FROM weather_data_2022 WHERE crop_type = 'Wheat' AND location = 'France';"}
+{"id":396,"answer":"SELECT Country, AVG(Temperature) AS avg_temp FROM WeatherData WHERE MONTH(Timestamp) = 6 GROUP BY Country ORDER BY avg_temp DESC;"}
+{"id":397,"answer":"SELECT AVG(Amount) FROM Budget WHERE District IN ('District G', 'District H') AND Year = 2021;"}
+{"id":398,"answer":"SELECT MAX(market_price) FROM Terbium_Market_Prices WHERE country = 'China' AND year = 2017;"}
+{"id":399,"answer":"SELECT ss.is_sustainable, SUM(r.amount) AS total_revenue FROM SustainableSourcing ss JOIN revenue r ON ss.revenue_id = r.id GROUP BY ss.is_sustainable;"}
+{"id":400,"answer":"SELECT AVG(score) FROM inspections WHERE area = 'urban';"}
+{"id":401,"answer":"SELECT MAX(daily_revenue) FROM (SELECT date, SUM(price) AS daily_revenue FROM Orders WHERE order_channel = 'delivery' GROUP BY date) t;"}
+{"id":402,"answer":"SELECT restaurant_name, MAX(daily_revenue) AS max_daily_revenue FROM daily_revenue WHERE YEAR(date) = 2022 GROUP BY restaurant_name;"}
+{"id":403,"answer":"SELECT SUM(mass) FROM space_debris WHERE orbit = 'MEO' AND launch_date < '2010-01-01';"}
+{"id":404,"answer":"SELECT sign_up_date, COUNT(*) AS new_fans FROM fan_club_members WHERE sign_up_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) GROUP BY sign_up_date ORDER BY sign_up_date;"}
+{"id":405,"answer":"SELECT COUNT(DISTINCT city) FROM olympics_history;"}
+{"id":406,"answer":"SELECT avg_ticket_price FROM stadiums WHERE city = 'New York';"}
+{"id":407,"answer":"SELECT source, COUNT(*) AS false_positive_count FROM false_positives WHERE date >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH) GROUP BY source ORDER BY false_positive_count DESC;"}
+{"id":408,"answer":"SELECT * FROM bike_stations WHERE city = 'New York' AND bikes_available > 20;"}
+{"id":409,"answer":"SELECT AVG(trip_duration) FROM high_speed_trains WHERE city = 'Beijing';"}
+{"id":410,"answer":"SELECT COUNT(CASE WHEN mode2 IS NOT NULL THEN 1 END) * 100.0 / COUNT(*) AS multimodal_percentage FROM trips;"}
+{"id":411,"answer":"SELECT SUM(sales) FROM sales_data WHERE avg_speed >= 80;"}
+{"id":412,"answer":"SELECT AVG(revenue) FROM RetailSales WHERE garment_type = 'Jeans' AND country = 'Mexico' AND year = 2021;"}
+{"id":413,"answer":"SELECT AVG(sustainability_score) FROM garment_data_2 WHERE collection = 'Autumn 2021';"}
+{"id":414,"answer":"SELECT pi.policy_id, pi.sum_insured FROM policy_info pi JOIN policyholder ph ON pi.policy_id = ph.policy_id WHERE pi.sum_insured < 60000 AND ph.gender = 'Female';"}
+{"id":415,"answer":"SELECT SUM(tests_passed) FROM safety_testing;"}
+{"id":416,"answer":"SELECT COUNT(*) FROM research_papers WHERE YEAR(publication_date) = 2021;"}
+{"id":417,"answer":"SELECT COUNT(*) FROM autonomous_testing WHERE test_result = 'pass';"}
+{"id":418,"answer":"SELECT v.vessel_name, COUNT(si.incident_id) AS incident_count FROM Vessels v JOIN SafetyIncidents si ON v.vessel_id = si.vessel_id WHERE si.incident_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH) GROUP BY v.vessel_name ORDER BY incident_count DESC;"}
+{"id":419,"answer":"SELECT SUM(cargo_weight) FROM vessel_performance WHERE country = 'US' AND arrived_date BETWEEN '2021-07-01' AND '2021-12-31';"}
+{"id":420,"answer":"SELECT COUNT(*) FROM circular_economy_initiatives WHERE region = 'Latin America' AND year = 2020;"}
+{"id":421,"answer":"SELECT SUM(capacity) FROM landfill_capacity WHERE city IN ('City A', 'City B');"}
+{"id":422,"answer":"SELECT sensor_id, MAX(water_level) AS max_level FROM sensor_data GROUP BY sensor_id ORDER BY max_level DESC LIMIT 1;"}
+{"id":423,"answer":"SELECT issue_category, COUNT(*) AS issue_count FROM ethics_issues WHERE country IN ('Colombia', 'Brazil', 'Cuba', 'Argentina', 'Chile', 'Peru', 'Venezuela', 'Ecuador', 'Bolivia', 'Paraguay', 'Uruguay', 'Mexico', 'Guatemala', 'Honduras', 'El Salvador', 'Nicaragua', 'Costa Rica', 'Panama', 'Dominican Republic', 'Haiti', 'Jamaica', 'Trinidad and Tobago', 'Barbados', 'Belize', 'Guyana', 'Suriname') GROUP BY issue_category;"}
+{"id":424,"answer":"SELECT country, COUNT(*) AS issue_count FROM creative_ai_algorithm_explainability GROUP BY country ORDER BY issue_count DESC LIMIT 3;"}
+{"id":425,"answer":"SELECT name, launch_date FROM Satellites WHERE manufacturer = 'SpaceTech Inc.';"}
+{"id":426,"answer":"SELECT MAX(habitat_size) FROM animal_habitat;"}
+{"id":427,"answer":"SELECT Gender, COUNT(*) AS count FROM Audience a JOIN Events e ON a.EventID = e.EventID WHERE e.EventName = 'African Art' GROUP BY Gender;"}
+{"id":428,"answer":"SELECT SUM(streams) FROM music WHERE artist_country = 'United States';"}
+{"id":429,"answer":"SELECT state, avg_wage FROM labor_statistics WHERE year = 2020 ORDER BY avg_wage DESC LIMIT 2;"}
+{"id":430,"answer":"SELECT AVG(cost) FROM building_permits WHERE permit_type = 'Commercial' AND state = 'California' AND year = 2019;"}
+{"id":431,"answer":"CREATE TABLE client_demographics (client_id INT PRIMARY KEY, client_name VARCHAR(255), age INT, gender VARCHAR(50), address VARCHAR(255));"}
+{"id":432,"answer":"INSERT INTO clients (client_name) VALUES ('Alex Juarez');"}
+{"id":433,"answer":"SELECT SUM(te.Hours) FROM Attorneys a JOIN TimeEntries te ON a.AttorneyID = te.AttorneyID WHERE a.Name = 'John Doe';"}
+{"id":434,"answer":"SELECT type, COUNT(*) AS count FROM hospitals GROUP BY type UNION ALL SELECT type, COUNT(*) AS count FROM clinics GROUP BY type UNION ALL SELECT type, COUNT(*) AS count FROM long_term_care GROUP BY type;"}
+{"id":435,"answer":"SELECT gender, AVG(age) AS avg_age FROM patients WHERE flu_shot = TRUE AND YEAR(shot_date) = 2020 GROUP BY gender;"}
+{"id":436,"answer":"SELECT gender, SUM(num_screenings) AS total_screenings FROM cancer_screenings GROUP BY gender;"}
+{"id":437,"answer":"SELECT country, COUNT(*) AS organic_farm_count FROM farm_data WHERE is_organic = TRUE GROUP BY country;"}
+{"id":438,"answer":"SELECT crop_name, SUM(production_tons) AS total_production FROM organic_crops WHERE country IN ('France', 'Germany', 'Italy', 'Spain', 'Poland', 'Netherlands', 'Belgium', 'Sweden', 'Denmark', 'Austria', 'Czech Republic', 'Hungary', 'Portugal', 'Romania', 'Bulgaria') GROUP BY crop_name;"}
+{"id":439,"answer":"SELECT sc.contract_address FROM smart_contracts sc JOIN transactions t ON sc.contract_address = t.contract_address WHERE sc.deployment_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) GROUP BY sc.contract_address HAVING COUNT(*) > 1000;"}
+{"id":440,"answer":"SELECT holder_id, address, SUM(balance) AS total_balance FROM token_holders WHERE asset_id = 1 GROUP BY holder_id, address ORDER BY total_balance DESC LIMIT 1;"}
+{"id":441,"answer":"SELECT s.supplier_id, SUM(s.quantity) AS total_quantity FROM sales s JOIN products p ON s.product_id = p.id WHERE p.category = 'Haircare' GROUP BY s.supplier_id;"}
+{"id":442,"answer":"SELECT * FROM products WHERE vegan = TRUE AND cruelty_free = TRUE ORDER BY name ASC;"}
+{"id":443,"answer":"SELECT country, product_count FROM cruelty_free_products WHERE cruelty_free = TRUE;"}
+{"id":444,"answer":"SELECT b.name, SUM(s.num_vehicles) AS total_vehicles FROM borough b JOIN stations s ON b.id = s.borough_id GROUP BY b.name;"}
+{"id":445,"answer":"SELECT ec.IncidentType, AVG(ec.ResponseTime) AS avg_response_time FROM EmergencyCalls ec JOIN IncidentTypes it ON ec.IncidentType = it.IncidentType WHERE ec.City = 'CityA' GROUP BY ec.IncidentType;"}
+{"id":446,"answer":"SELECT location, type, COUNT(*) AS incident_count, COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY location) AS percentage FROM incidents GROUP BY location, type;"}
+{"id":447,"answer":"SELECT city, MAX(response_time) AS max_time, MIN(response_time) AS min_time FROM fire_department_oh GROUP BY city;"}
+{"id":448,"answer":"SELECT Agency, SUM(Contract_Value) AS total_value FROM Agency_Contracts WHERE State = 'Texas' GROUP BY Agency ORDER BY total_value DESC LIMIT 1;"}
+{"id":449,"answer":"DELETE FROM equipment WHERE type = 'ground';"}
+{"id":450,"answer":"SELECT t.* FROM customers c JOIN transactions t ON c.customer_id = t.customer_id WHERE c.country = 'US' AND t.transaction_date BETWEEN '2022-02-01' AND '2022-02-28';"}
+{"id":451,"answer":"SELECT DISTINCT c.name FROM customers c JOIN transactions t ON c.id = t.customer_id WHERE c.category = 'risk_management' AND t.amount > 500;"}
+{"id":452,"answer":"UPDATE fleet SET max_capacity = 5000 WHERE vessel_id = 1;"}
+{"id":453,"answer":"SELECT AVG(salary) FROM worker_salaries WHERE sector = 'renewable energy' AND country IN ('US', 'Canada');"}
+{"id":454,"answer":"SELECT es.SiteName, COUNT(a.ArtifactID) AS artifact_count FROM ExcavationSite es JOIN Artifact a ON es.SiteID = a.SiteID GROUP BY es.SiteName HAVING COUNT(a.ArtifactID) > 10;"}
+{"id":455,"answer":"SELECT SUM(revenue) FROM hospitals WHERE location = 'rural' AND trauma_center = TRUE;"}
+{"id":456,"answer":"SELECT operation, threat, budget, RANK() OVER (ORDER BY CASE WHEN threat = 'High' THEN 1 WHEN threat = 'Medium' THEN 2 ELSE 3 END, budget DESC) AS ranking FROM intel_ops_threat;"}
+{"id":457,"answer":"SELECT Department, SUM(CASE WHEN Gender != 'Male' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS diversity_ratio FROM Employees GROUP BY Department;"}
+{"id":458,"answer":"SELECT COUNT(*) FROM energy_efficiency WHERE country IN (SELECT country FROM renewable_sources WHERE name = 'Solar' AND capacity > 20);"}
+{"id":459,"answer":"SELECT SUM(capacity) FROM hydroelectric_power WHERE country IN ('Brazil', 'Canada');"}
+{"id":460,"answer":"SELECT team_name, SUM(points_scored) AS total_points FROM nba_teams GROUP BY team_name;"}
+{"id":461,"answer":"SELECT AVG(donation_amount) FROM donors WHERE donor_country = 'USA' AND YEAR(donation_date) = 2020;"}
+{"id":462,"answer":"SELECT continent, name FROM ethics_by_continent WHERE focus = 'Ethical AI';"}
+{"id":463,"answer":"SELECT trip_date, line_name, SUM(num_passengers) AS daily_ridership FROM train_trip GROUP BY trip_date, line_name;"}
+{"id":464,"answer":"SELECT AVG(distance) AS avg_distance, AVG(frequency) AS avg_frequency FROM route WHERE distance > 7 AND frequency >= 120;"}
+{"id":465,"answer":"UPDATE Manufacturers SET GOTS = 'Yes' WHERE Region = 'Africa';"}
+{"id":466,"answer":"SELECT producer, SUM(quantity) AS total_quantity FROM ethical_materials GROUP BY producer;"}
+{"id":467,"answer":"SELECT Material, MIN(SustainabilityScore) AS min_score FROM TextileSources GROUP BY Material;"}
+{"id":468,"answer":"SELECT country, COUNT(*) AS client_count FROM socially_responsible_loans GROUP BY country;"}
+{"id":469,"answer":"SELECT fi.institution_name, SUM(l.amount) AS total_loans FROM financial_institutions fi JOIN loans l ON fi.institution_id = l.institution_id WHERE l.loan_type = 'Shariah-compliant' GROUP BY fi.institution_name;"}
+{"id":470,"answer":"SELECT SUM(income) FROM clients WHERE country = 'Canada' AND is_socially_responsible_investor = TRUE;"}
+{"id":471,"answer":"SELECT COUNT(*) FROM Donations WHERE DonorID NOT IN (SELECT DISTINCT DonorID FROM Donations WHERE DonationDate < DATE_SUB(CURDATE(), INTERVAL 3 MONTH)) AND DonationDate >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH);"}
+{"id":472,"answer":"SELECT COUNT(*) FROM volunteers WHERE program = 'Education' AND YEAR(volunteer_date) = 2021;"}
+{"id":473,"answer":"SELECT p.pname, SUM(d.amount) AS total_donations FROM program p JOIN donation d ON p.pid = d.pid WHERE d.donation_date BETWEEN '2022-01-01' AND '2022-03-31' GROUP BY p.pname;"}
+{"id":474,"answer":"SELECT ProgramName, AVG(DonationAmount) AS avg_donation FROM Programs GROUP BY ProgramName ORDER BY avg_donation;"}
+{"id":475,"answer":"DELETE FROM FoodSafetyRecords.PerishableGoods WHERE bestBeforeDate < DATE_ADD(CURDATE(), INTERVAL 1 DAY);"}
+{"id":476,"answer":"INSERT INTO food_safety_records (id, location, inspection_date, violation_count) VALUES (1, 'A123', CURDATE(), 0), (2, 'B456', CURDATE(), 0), (3, 'C789', CURDATE(), 0);"}
+{"id":477,"answer":"SELECT COUNT(CASE WHEN m.calories >= m.daily_recommended_intake THEN 1 END) * 100.0 / COUNT(*) AS percentage FROM meals m JOIN customers c ON m.customer_id = c.id WHERE c.country = 'Indonesia';"}
+{"id":478,"answer":"SELECT w.city, COUNT(s.id) AS shipment_count FROM Warehouse w JOIN Shipments s ON w.id = s.warehouse_id WHERE s.shipped_date BETWEEN '2021-01-01' AND '2021-03-31' GROUP BY w.city;"}
+{"id":479,"answer":"SELECT AVG(transit_time) FROM ground_freight_routes WHERE origin = 'Toronto' AND destination = 'Montreal';"}
+{"id":480,"answer":"SELECT country, COUNT(*) AS biosensor_count FROM biosensors GROUP BY country;"}
+{"id":481,"answer":"INSERT INTO Research_Grants (Grant_ID, Grant_Title, Start_Date, End_Date, Grant_Amount, Grant_Status) VALUES (30, 'Artificial Intelligence for Healthcare', '2023-01-01', '2025-12-31', 1200000, 'Active');"}
+{"id":482,"answer":"SELECT country, COUNT(*) AS initiative_count FROM smart_city_initiatives GROUP BY country;"}
+{"id":483,"answer":"SELECT AVG(sr.rating) FROM site_ratings sr JOIN site_info si ON sr.site_id = si.site_id WHERE si.country = 'Egypt';"}
+{"id":484,"answer":"SELECT AVG(vt.views) AS avg_engagement FROM hotels h JOIN virtual_tours vt ON h.hotel_id = vt.hotel_id WHERE h.country IN ('France', 'Germany', 'Italy', 'Spain', 'United Kingdom', 'Netherlands', 'Belgium', 'Sweden', 'Portugal', 'Austria');"}
+{"id":485,"answer":"SELECT COUNT(*) FROM art_collection WHERE style = 'French Impressionist';"}
+{"id":486,"answer":"SELECT AVG(a.price) FROM Artworks a WHERE a.artist_nationality = 'African';"}
+{"id":487,"answer":"SELECT SUM(value) FROM ArtPieces WHERE style = 'Surrealism';"}
+{"id":488,"answer":"SELECT construction_year, COUNT(*) AS num_bridges, SUM(cost) AS total_cost FROM bridge_projects WHERE location = 'Pacific Northwest' GROUP BY construction_year;"}
+{"id":489,"answer":"SELECT Name, Type FROM Bridges WHERE State = 'California';"}
+{"id":490,"answer":"SELECT AVG(budget) FROM Projects;"}
+{"id":491,"answer":"SELECT continent, COUNT(*) AS initiative_count FROM Sustainable_Initiatives_Global GROUP BY continent;"}
+{"id":492,"answer":"SELECT (t2.number_of_tourists - t1.number_of_tourists) * 100.0 / t1.number_of_tourists AS pct_change FROM tourism t1 JOIN tourism t2 ON t1.host_country = t2.host_country AND t1.visitor_country = t2.visitor_country WHERE t1.host_country = 'Japan' AND t1.visitor_country = 'India' AND MONTH(t1.date) = 3 AND MONTH(t2.date) = 4;"}
+{"id":493,"answer":"SELECT initiative, country, launch_date FROM historical_legal_tech WHERE launch_date >= '2010-01-01';"}
+{"id":494,"answer":"SELECT COUNT(*) AS total FROM (SELECT id FROM marine_life_research_stations WHERE region = 'Southern Ocean' UNION ALL SELECT id FROM pollution_control_initiatives WHERE region = 'Southern Ocean') t;"}
+{"id":495,"answer":"SELECT SUM(di.quantity) AS total_quantity FROM dish_ingredients di JOIN ingredients i ON di.ingredient = i.ingredient WHERE i.is_local = TRUE;"}
+{"id":496,"answer":"SELECT risk_level FROM geopolitical_risks_2 WHERE country = 'Country Y' AND year = 2021;"}
+{"id":497,"answer":"SELECT city, COUNT(*) AS customer_count FROM mobile_customers GROUP BY city;"}
+{"id":498,"answer":"SELECT COUNT(DISTINCT source) FROM articles WHERE category = 'investigative_journalism';"}
+{"id":499,"answer":"SELECT (SELECT ph FROM ocean_ph WHERE location = 'Atlantic Ocean') - (SELECT ph FROM ocean_ph WHERE location = 'Pacific Ocean') AS acidity_difference;"}
